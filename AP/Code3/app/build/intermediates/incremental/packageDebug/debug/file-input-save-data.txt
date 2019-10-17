@@ -1,7 +1,0 @@
-#Internal package file, do not edit.
-#Tue Aug 06 10:19:22 IST 2019
-0.baseType=DIRECTORY
-0.base=/home/dsc2/Semester3/AP/Code3/app/build/intermediates/transforms/dexMerger/debug/0
-0.path=classes.dex
-0.set=DEX
-count=1
