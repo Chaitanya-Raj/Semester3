@@ -1,83 +1,69 @@
-#include <iostream>
-#include <conio.h>
-#include <stdlib.h>
-#include <time.h>
+#include<iostream>
+#include<stdlib.h>
+#include<conio.h>
+#include<time.h>
 using namespace std;
-
 class stopandwait
 {
 	long int frame[20];
-	int n, sq, ack, z;
-
-public:
-	stopandwait()
-	{
-		sq = 0;
-		z = 1;
-	}
-	void input()
-	{
-		cout << "enter total no. of frame to be send:";
-		cin >> n;
-		for (int i = 0; i < n; i++)
+	int n,sq,ack,z;
+	public:
+		stopandwait()
 		{
-			cout << "\nenter data in  frame" << i << " :";
-			cin >> frame[i];
+			sq=0;
+			z=1;
 		}
-		sender(0);
-	}
-	void sender(int timer)
-	{
-		cout << "\n\nSENDER :\n\n";
-		if (timer == -1)
+		void input()
 		{
-			cout << "timer stopped ,ACKNOWLEDGEMENT not received ";
-		}
-		cout << "\nframe sent to reciever is:" << z << "\nand data in frame is :" << frame[z];
-		cout << "\nsequence no. is:" << sq;
-		getch();
-		if (z > n)
-		{
-		}
-		else
-		{
-			receiver(z, sq);
-		}
-	}
-	void receiver(int y, int sq)
-	{
-		int r = (rand() % 3) + 1;
-		cout << "\n\nRECEIVER\n\n";
-		switch (r)
-		{
-		case 1:
-		{
-			cout << "\nframe " << y << "received with data" << frame[y];
-			cout << "sequence no. is:" << sq << "\nPACKET RECEIVED SUCESSFULLY.";
-			cout << "\nACKNOWLEDGEMENT SENT:";
-			z += 1;
-			sq = (sq + 1) % 2;
+			cout<<"\n Enter total no. of frames to be send: ";
+			cin>>n;
+			for(int i=1;i<=n;i++)
+			{
+				cout<<"Enter data in frame "<<i<<" : ";
+				cin>>frame[i];
+			}
 			sender(0);
-			break;
 		}
-		case 2:
+		void sender(int timer)
 		{
-			cout << "\nframe " << y << "received with data" << frame[y];
-			cout << "sequence no. is:" << sq << "\nPACKET RECEIVED SUCESSFULLY.";
-			cout << "\nACKNOWLEDGEMENT SENT:";
-			sender(-1);
-			break;
+			cout<<"\n\nSender : \n\n";
+			if(timer==-1)
+				cout<<"Timer stopped: Acknowledgement not recieved";
+			cout<<"\n Frame sent to reciever is : "<<z<<" And data in frame is : "<<frame[z];
+			cout<<"\nSequence no. is : "<<sq;
+			getch();
+			if(z>n)
+			{}
+			else
+				reciever(z,sq);
 		}
-		case 3:
+		void reciever(int y,int sq)
 		{
-			cout << "\nframe lost\nsequence no. is:" << sq;
-			cout << "\nnegative acknowledgement send.";
-			sender(0);
-			break;
+			int r=(rand()%3)+1;
+			cout<<"\n\n Reciever :\n\n";
+			switch(r)
+			{
+				case 1:{cout<<"\nFrame "<<y<<" recieved with Data : "<<frame[y];
+					cout<<"Sequence no. is : "<<sq<<"\nPACKET RECIEVED SUCCESSFULLY";
+					z+=1;
+					sq=(sq+1)%2;
+					sender(0);
+					break;
+				}
+				case 2:{cout<<"\nFrame "<<y<<" recieved with Data : "<<frame[y];
+					cout<<"Sequence no. is : "<<sq<<"\nPACKET RECIEVED SUCCESSFULLY";
+					cout<<"\nAcknowledgement Sent";
+					sender(-1);
+					break;
+				}
+				case 3:{cout<<"\nFrame LOST\nSequence no. is : "<<sq;
+					cout<<"\nNegative Acknowledgement send";
+					sender(0);
+					break;
+				}
+			}
 		}
-		}
-	}
-} obj;
+}obj;
 int main()
 {
 	obj.input();
