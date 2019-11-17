@@ -4,7 +4,8 @@ using namespace std;
 template <class t>
 void menu(QueueLL<t> &q)
 {
-	int choice, on;
+	int choice;
+	char on;
 	do
 	{
 		cout << "Enter your choice" << endl;
@@ -38,9 +39,9 @@ void menu(QueueLL<t> &q)
 		{
 			cout << "Empty Queue" << endl;
 		}
-		cout << "To continue, Press 1: ";
+		cout << "Continue?(y/n)";
 		cin >> on;
-	} while (on == 1);
+	} while (on == 'y' || on == 'Y');
 }
 int main()
 {

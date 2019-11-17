@@ -1,5 +1,4 @@
 #include <iostream>
-//#include<conio.h>
 using namespace std;
 struct node
 {
@@ -84,11 +83,6 @@ void linkedlist::insert(int a)
                 temp->next = p;
                 return;
             }
-            /* else if(temp->next==NULL&&p->info>temp->info)
-		  {
-		  	temp->next=p;
-			return;
-		  }*/
             else
             {
                 temp = temp->next;
@@ -130,7 +124,6 @@ void linkedlist::deletion(int x)
         else
         {
             temp = temp->next;
-            //d=temp->next;
         }
     }
     cout << "Element not present in the list" << endl;

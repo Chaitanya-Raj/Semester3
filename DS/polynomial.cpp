@@ -1,5 +1,5 @@
 #include <iostream>
-#include <conio.h>
+#include <cstdlib>
 using namespace std;
 struct node
 {
@@ -115,7 +115,7 @@ public:
         cout << "Polynomial is   ";
         while (temp != NULL)
         {
-            cout << temp->coeff << "x" << temp->pow << " ";
+            cout << temp->coeff << "x^" << temp->pow << " ";
             temp = temp->next;
         }
         cout << endl;
@@ -137,7 +137,6 @@ int main()
         switch (n)
         {
         case 1:
-
             p4.input();
             p4.display();
             break;
@@ -149,10 +148,11 @@ int main()
             p6 = p6.add(p4, p5);
             p6.display();
             break;
+        case 0:
+            exit(0);
         default:
             cout << "Invalid choice " << endl;
         }
     } while (n != 0);
-    getch();
     return 0;
 }
