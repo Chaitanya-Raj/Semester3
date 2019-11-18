@@ -3,8 +3,8 @@ using namespace std;
 
 class MemoryAllocation
 {
-    int blockSize[10];
-    int processSize[10];
+    int *blockSize;
+    int *processSize;
     int m;
     int n;
 
@@ -13,6 +13,7 @@ public:
     {
         cout << "\nEnter the number of memory blocks : ";
         cin >> m;
+        blockSize = new int[m];
         cout << "\nEnter the block sizes : \n";
         for (int i = 0; i < m; i++)
         {
@@ -21,6 +22,7 @@ public:
         }
         cout << "\nEnter the number of processes : ";
         cin >> n;
+        processSize = new int[n];
         cout << "\nEnter the process sizes : \n";
         for (int i = 0; i < n; i++)
         {
