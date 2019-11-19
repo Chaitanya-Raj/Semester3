@@ -1,7 +1,7 @@
 //Practical 9 - parenthesis matching
 
 #include <iostream>
-#include "ds5.cpp"
+#include "stackusingtemplates.cpp"
 using namespace std;
 
 void matchParen(string s, int n)

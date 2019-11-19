@@ -24,7 +24,7 @@ int main()
 		printf("\nMachine : %s",s2.machine);
 		printf("\nTotal ram: %ldmb",(s1.totalram/MB));
 		printf("\nFree ram : %ldmb",(s1.freeram/MB));
-		printf("\nUsed ram:% ldmb",(s1.totalram-s1.freeram)/MB);
+		printf("\nUsed ram: %ldmb",(s1.totalram-s1.freeram)/MB);
 		printf("\nTotalsize of partition: %ldGB",(s3.f_bsize*s3.f_blocks)/GB);
 		printf("\n");
 	} 
