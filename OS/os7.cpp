@@ -11,9 +11,9 @@ void *runner(void *param)
     int *upper = (int *)param;
     sum = 0;
     for (int i = 1; i <= *upper; i++)
-        sum += 1;
+        sum += i;
     pthread_exit(0);
-}ṇ
+}
 
 int main()
 {
