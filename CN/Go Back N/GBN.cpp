@@ -1,5 +1,4 @@
 #include<iostream>
-#include<conio.h>
 #include<math.h>
 #include<stdlib.h>
 using namespace std;
@@ -42,21 +41,21 @@ void GBN::sender()
 		int bk=receiver();
 		if(bk==1)
 		{
-			cout<<"Acknowledgement received"<<endl;
+			cout<<"\nAcknowledgement received"<<endl;
 			cout<<"Frame: "<<ctr<<" Sent Successfully";
 			flag=1;
 			ctr++;
 		}
 		if(flag==1 and t<=n)
 		{
-			cout<<"Window Shift"<<endl;
+			cout<<"\nWindow Shift"<<endl;
 			cout<<"Frame: "<<t<<" Sent";
 			t++;
 			flag=0;
 		}
 		else
 		{
-			cout<<"Acknowledgement not received"<<endl;
+			cout<<"\nAcknowledgement not received"<<endl;
 			for(int i=ctr;i<t;i++)
 			{
 				cout<<"Frame: "<<i<<" must be resent"<<endl;
@@ -67,7 +66,6 @@ void GBN::sender()
 int GBN::receiver()
 {
 	int num=rand()%2;
-	getch();
 	return num;
 }
 int main()
